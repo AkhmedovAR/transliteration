@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Транслитерация</title>
+</head>
+<body>
+    <h1>Транслитерация текста</h1>
+    <form method="POST">
+        <label for="text">Введите текст:</label><br>
+        <textarea name="text" id="text" rows="2" cols="50"></textarea><br>
+        <input type="submit" value="Перевести">
+    </form>
+    {% if result %}
+    <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>

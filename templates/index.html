@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Транслитерация</title>
+    <title>Распознавание лиц</title>
 </head>
 <body>
-    <h1>Транслитерация текста</h1>
-    <form method="POST">
-        <label for="text">Введите текст:</label><br>
-        <textarea name="text" id="text" rows="2" cols="50"></textarea><br>
-        <input type="submit" value="Перевести">
+    <h1>Распознавание лиц</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label for="image">Выберите изображение с лицом:</label>
+        <input type="file" name="image" accept="image/*" required>
+        <br>
+        <input type="submit" value="Распознать лицо">
     </form>
-    {% if result %}
-    <p>{{ result }}</p>
+
+    {% if first_name and last_name %}
+    <h2>Результат:</h2>
+    <p>Имя: {{ first_name }}</p>
+    <p>Фамилия: {{ last_name }}</p>
     {% endif %}
 </body>
 </html>
